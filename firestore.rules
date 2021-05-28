@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuth() {
+      return request.auth != null
+    }
+
+    function isAdmin(uid) {
+        return get(/databases/$(database)/documents/users/$(uid)).data.isAdmin == true;
+    }
+
+    match /products/{product} {
+
+      function isValid(catalog){
+        //return catalog == 'men' || catalog == 'women';
+        //return get(/databases/$(database)/documents/catalogs).data.name == catalog; notworking
+        return exists(/databases/$(database)/documents/catalog/$(catalog));
+
+      }
+
+      allow read: if true;
+      allow create, update: if isAuth() && isAdmin(request.auth.uid) && isValid(request.resource.data.catalog);
+      allow delete: if isAuth() && isAdmin(request.auth.uid);
+    }
+
+    match /orders/{order} {
+      allow read : if isAuth() && resource.data.user.uid == request.auth.uid;
+      allow write: if false;
+    }
+
+    match /users/{user} {
+    
+    	function schema(data) {
+				return data.timestamp is timestamp;      
+      }
+    
+      allow read, update, delete: if isAuth() && request.auth.uid == user;
+      allow create: if isAuth() && schema(request.resource.data);
+      
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+	width: 13px;
+	height: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 100vh;
+	background: #edf2f7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #cbd5e0;
+	border-radius: 100vh;
+	border: 3px solid #edf2f7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #a0aec0;
+}
+
+body {
+	@apply leading-4 font-sans bg-gray-100;
+}
+
+a,
+a:hover {
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+
+button:focus {
+	@apply outline-none;
+}
+
+.ck-content > blockquote,
+.ck-content > dl,
+.ck-content > dd,
+.ck-content > h1,
+.ck-content > h2,
+.ck-content > h3,
+.ck-content > h4,
+.ck-content > h5,
+.ck-content > h6,
+.ck-content > hr,
+.ck-content > figure,
+.ck-content > p,
+.ck-content > pre {
+	margin: revert;
+}
+
+.ck-content > ol,
+.ck-content > ul {
+	list-style: revert;
+	margin: revert;
+	padding: revert;
+}
+
+.ck-content > table {
+	border-collapse: revert;
+}
+
+.ck-content > h1,
+.ck-content > h2,
+.ck-content > h3,
+.ck-content > h4,
+.ck-content > h5,
+.ck-content > h6 {
+	font-size: revert;
+	font-weight: revert;
+}
+
+.ck-editor__editable_inline {
+	min-height: 300px;
+}

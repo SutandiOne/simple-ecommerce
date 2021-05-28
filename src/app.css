@@ -1,0 +1,48 @@
+.nav-link {
+	@apply p-3 mx-1 hover:bg-gray-200 rounded-sm tracking-wider;
+}
+
+.banner {
+	@apply bg-gray-600 hover:bg-gray-900 opacity-50 md:text-6xl text-2xl text-white tracking-widest font-bold flex items-center justify-center;
+}
+
+.page-title {
+	@apply text-4xl tracking-widest text-center mb-12;
+}
+
+.page-body {
+	@apply flex flex-col bg-white md:w-2/6 mx-auto p-6 w-80 shadow-md rounded-xl;
+}
+
+.page-body-xl {
+	@apply flex flex-col bg-white md:w-2/3 mx-auto p-6 w-80 shadow-md rounded-xl;
+}
+.page-body-order {
+	@apply bg-white md:w-4/5 mx-auto p-6 w-80 shadow-md rounded-xl;
+}
+
+.input-text {
+	@apply border border-gray-300 w-full py-2 px-4 my-2 tracking-wider text-gray-700 shadow-sm text-base focus:outline-none;
+}
+
+.input-error {
+	@apply text-sm text-red-700 tracking-wider;
+}
+
+.btn-submit {
+	@apply p-4 bg-gray-600 text-white hover:bg-gray-700 rounded-md tracking-wide mt-8 shadow-sm;
+}
+.btn-add {
+	@apply p-3 bg-blue-800 text-white hover:bg-blue-700 rounded-sm tracking-wide mt-2 shadow-sm;
+}
+
+.btn-paginate {
+	@apply p-2 bg-gray-200  hover:bg-gray-300 rounded-sm tracking-wider shadow-sm;
+}
+
+.btn-change {
+	@apply p-2 bg-gray-200  hover:bg-gray-300 rounded-sm tracking-wider shadow-sm;
+}
+.btn-delete {
+	@apply p-2 bg-red-200  hover:bg-red-300 rounded-sm tracking-wider shadow-sm;
+}
